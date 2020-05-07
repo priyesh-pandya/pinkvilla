@@ -1,0 +1,9 @@
+{  
+"name": "Pinkvilla",   
+"short_name": "Priyesh", 
+"lang": "en-US",     
+"start_url": "index.php", 
+"display": "standalone",  
+"background_color": "white",   
+"theme_color": "pink" 
+}
