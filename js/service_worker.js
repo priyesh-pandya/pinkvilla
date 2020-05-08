@@ -12,6 +12,8 @@ return cache.addAll(filesToCache);
 })    
 );  
 }); 
+
+
 /* Serve cached content when offline */ 
 self.addEventListener('fetch', function(e) {  
 e.respondWith( caches.match(e.request).then(function(response) {  
