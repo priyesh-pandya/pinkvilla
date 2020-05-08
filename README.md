@@ -8,18 +8,18 @@
 Your number one source for Bollywood news & gossip, Bollywood movies, Bollywood fashion and TV news. Check out the hottest photos and videosof your favorite Bollywood and TV stars.
 
  
-## About Code Script 
+## Purpose of Code Script 
 
-Source code for PHP and HTML will read the JSON feed from a CDN server and display responsive page like ​pinterest.com​  
+Source code writtern in PHP and HTML will read & parse the JSON feed from the CDN server and process the data and display responsive pages like ​pinterest.com​  
 
 The json feed has a list of latest published articles that need to be sorted first by its view-count and then render the webpages into a multi-column layout supported in Mobile, Tables and Desktops. 
  
 
 ## Prerequisites 
 
-A simple pages for demonstration purpose. Based on PHP and HTML.
+A simple pages for demonstration purpose so we need based on PHP on any webserver and HTML,CSS and JS library.
 
-Requirements/CDN used
+Requirements/CDN used-
 
 - Bootstrap(CDN) 3.3.7~
 - PHP >= 7.1
@@ -27,7 +27,7 @@ Requirements/CDN used
 - JQuery(CDN) v1.11.0
  
 
-## Installation
+## Installation & Process
 
 1. Make sure GIT is working.
 2. PHP and Apache are installed
@@ -41,7 +41,7 @@ Open the GIT cli (Git - The Command Line) execute following commands
  
 Make sure you set the correct PHP And Apache running before executing PHP files. 
 
-## Test Your Scrip
+## How to test our script?
 
 PHP Page 1 - Open the url http://localhost/pinkvilla/webpage1.php in your web browser will run the app served by PHP
 
