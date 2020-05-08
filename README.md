@@ -8,7 +8,7 @@
 Your number one source for Bollywood news & gossip, Bollywood movies, Bollywood fashion and TV news. Check out the hottest photos and videosof your favorite Bollywood and TV stars.
 
  
-## Purpose of Code Script 
+## Purpose of code script 
 
 Source code writtern in PHP and HTML will read & parse the JSON feed from the CDN server and process the data and display responsive pages like ​pinterest.com​  
 
@@ -27,7 +27,7 @@ Requirements/CDN used-
 - JQuery(CDN) v1.11.0
  
 
-## Installation & Process
+## Installation & process
 
 1. Make sure GIT is working.
 2. PHP and Apache are installed
