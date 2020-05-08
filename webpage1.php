@@ -91,9 +91,14 @@ foreach($jsonFeedDecoded as $feed)
 krsort($sortedFeeds);
 unset($jsonFeedDecoded,$json_feed_string);
 
+echo "<div style='display:block'><script> var jsonstring = ".json_encode($sortedFeeds)." </script></div>";
+
 foreach($sortedFeeds as $feed)
 {
-	displayFeedPost($feed);// loop all feeds
+	if($i<20){// PWA load first 20 objects
+		displayFeedPost($feed);// loop all feeds
+	}
+	$i++;
 } 
 
 function displayFeedPost($feed)
@@ -141,6 +146,24 @@ function displayFeedPost($feed)
 	.register('js/service_worker.js'); 
 	} 
 	}
-    </script>
+	
+ 	setTimeout(function(){loadFeed('off')},3000);// PWA page load
+	
+	// Fetch & display  Feeds 		
+function loadFeed(pwaMode){
+  var pwpCount = 20;
+  var k= 0; // start
+  
+  jQuery.each(jsonstring,function(i) {
+	   k++;
+	   if(k>pwpCount){
+  	 	var title = (jsonstring[i].title).split(' '); 
+		var feed = "<article class='white-panel'><p><a class='title text-dark' href='https://www.pinkvilla.com/"+jsonstring[i].path+"'><img class='rounded-circle' src='"+jsonstring[i].imageUrl+"'>"+ title[0]+' '+title[1]+' '+title[2] +'  ...' +"</a></p></article>";	
+		$('#feed-section').append(feed);
+	   }		
+	});
+		
+};	
+</script>
 </body>
 </html>
