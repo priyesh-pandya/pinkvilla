@@ -48,7 +48,7 @@ PHP Page 1 - Open the url http://localhost/pinkvilla/webpage1.php in your web br
 HTML Page 2 - Open the url http://localhost/pinkvilla/webpage2.html in your web browser will run the app.
 
 #Author : Priyesh Pandya
-Feel free to email me, if you have any question.
+Feel free to ask me and email me for any question.
  
  
 ## License
