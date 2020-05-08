@@ -31,6 +31,7 @@ Requirements/CDN used
 
 1. Make sure GIT is working.
 2. PHP and Apache are installed
+3. XAMPP is an easy to install Apache distribution containing MariaDB, PHP, and Perl. Just download and start the installer. It's that easy. https://www.apachefriends.org/download.html
 
 Open the GIT cli (Git - The Command Line) execute following commands 
 
