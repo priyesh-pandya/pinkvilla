@@ -91,6 +91,7 @@ body {
 <script>
 var pwaMode = 'on';
 $(document).ready(function() {
+
 // Fetch & display  Feeds 		
 function loadFeed(pwaMode){
   var pinkvillaJsonURL = "js/json-data.json";
@@ -121,7 +122,7 @@ function loadFeed(pwaMode){
 };
 
 loadFeed('on');
-setTimeout(function(){loadFeed('off')},3000);
+setTimeout(function(){loadFeed('off')},2000);
 		
 // init grid view 
 $('#feed-section').pinterest_grid({
