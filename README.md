@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://en.wikipedia.org/wiki/Pinkvilla#/media/File:PinkVilla_Logo.png" alt="pinkvilla-logo">
+<img src='https://www.pinkvilla.com/sites/all/themes/pinkvilla/images/logo-small.png'>
 </p>
 
 
