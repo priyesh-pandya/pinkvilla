@@ -84,11 +84,13 @@ $jsonFeedDecoded = json_decode($json_feed_string,true);
 $i=0;
 $sortedFeeds=array();
 // Array Sort by its viewcount 
-foreach($jsonFeedDecoded as $feed)
+foreach($jsonFeedDecoded as $id=>$feed)
 {
-	$sortedFeeds[$feed['viewCount']] = array('imageUrl'=>$feed['imageUrl'],'title'=>$feed['title'],'path'=>$feed['path']);		
+	$sortedFeeds[$id] = array('viewCount'=>$feed['viewCount'],'imageUrl'=>$feed['imageUrl'],'title'=>$feed['title'],'path'=>$feed['path']);	
 }
-krsort($sortedFeeds);
+//krsort($sortedFeeds);
+array_multisort( array_column($sortedFeeds, "viewCount"), SORT_DESC, $sortedFeeds );
+
 unset($jsonFeedDecoded,$json_feed_string);
 
 echo "<div style='display:block'><script> var jsonstring = ".json_encode($sortedFeeds)." </script></div>";
