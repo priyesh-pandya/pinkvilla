@@ -8,6 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="black"/>
 <link rel="manifest" href="manifest.json">
+<!-- Favicons -->
+<link rel="icon" href="https://www.pinkvilla.com/files/icons/favicon.ico">
+
 <title>Pinkvilla Coding Exercise - By Priyesh Pandya</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
