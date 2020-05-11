@@ -76,7 +76,7 @@ body {
 <section id="feed-section">
 <?php  
 try{
-	$json_feed_string = file_get_contents('https://cdn.pinkvilla.com/feed/fashion-section.json'); 
+	$json_feed_string = file_get_contents('https://content.xynie.com/feed/fashion-section.json'); 
 }
 catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
