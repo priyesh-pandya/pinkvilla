@@ -106,8 +106,6 @@ array_multisort($sortedFeeds,SORT_DESC);
 
 unset($jsonFeedDecoded,$json_feed_string);
 
-echo "<div style='display:block'><script> var jsonstring = ".json_encode($sortedFeeds)." </script></div>";
- 
 foreach($sortedFeeds as $feed)
 {
 	if($i<20){// PWA load first 20 objects
@@ -140,6 +138,11 @@ function displayFeedPost($feed)
 
 <!-- Pinterest display grid END -->
 
+
+<?php 
+// JS string of sorted JSON
+echo "<div style='display:block'><script> var jsonstring = ".json_encode($sortedFeeds)." </script></div>";
+?>
 
 <!-- Bootstrap core JavaScript
 ================================================== --> 
