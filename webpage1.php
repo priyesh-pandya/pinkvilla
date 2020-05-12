@@ -77,6 +77,12 @@ body {
 
 <section id="feed-section">
 <?php   
+/*
+ini_set('display_errors', 1); 
+ini_set('display_startup_errors', 1); 
+error_reporting(E_ALL);
+*/
+
 try{
 	$json_feed_string = file_get_contents('https://cdn.pinkvilla.com/feed/fashion-section.json'); 
 }
