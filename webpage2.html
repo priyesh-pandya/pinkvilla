@@ -73,14 +73,15 @@ body {
 	
 <!-- Pinterest display grid START -->
 <div class="container">
-<div align='center' id='loading'>
-	<br>Loading ..
-</div>
 
 <section id="feed-section">
 
 </section>
 
+<div align='center' id='loading'>
+	<p style='color:pink'>Loading ...<p/><img src='img/Spinner-1s-200px.gif' align='center' >
+</div>
+	
 </div>
 <!-- Pinterest display grid END -->
 
@@ -94,9 +95,9 @@ body {
 <script>
 var pwaMode = 'on';
 $(document).ready(function() {
-
 // Fetch & display  Feeds 		
 function loadFeed(pwaMode){
+  $('#loading').show();	
   //var pinkvillaJsonURL = "js/json-data.json";
   var pinkvillaJsonURL = "https://content.xynie.com/feed/fashion-section.json";
   
@@ -106,9 +107,9 @@ function loadFeed(pwaMode){
   $.getJSON(pinkvillaJsonURL,function (data){
   
   // Sort json 
-  data.sort(function(a, b){
-		return a.viewCount - b.viewCount;
-   });
+   data.sort(function(a, b) {
+    return b["viewCount"] - a["viewCount"];
+  });
 
   if(pwaMode == 'off'){
 		k = pwpCount+1;
@@ -117,6 +118,7 @@ function loadFeed(pwaMode){
 	 		
   for(i=k;i<max;i++)
 	{
+		//console.log(' i='+ i + ' viewCount='+data[i].viewCount);
 		var title = (data[i].title).split(' '); 
 		var feed = "<article class='white-panel'><p><a class='title text-dark' href='https://www.pinkvilla.com/"+data[i].path+"'><img class='rounded-circle' src='"+data[i].imageUrl+"'>"+ title[0]+' '+title[1]+' '+title[2] +'  ...' +"</a></p></article>";	
 		$('#feed-section').append(feed);	
@@ -127,7 +129,7 @@ function loadFeed(pwaMode){
 };
 
 loadFeed('on');
-setTimeout(function(){loadFeed('off')},2000);
+setTimeout(function(){loadFeed('off');$('#loading').hide();},2000);
 		
 // init grid view 
 $('#feed-section').pinterest_grid({
@@ -148,7 +150,7 @@ $('#feed-section').pinterest_grid({
 	}
 
 // Hide	
-	$('#loading').hide();
+	//$('#loading').hide();
 	   
  });		
 		 

@@ -73,10 +73,12 @@ body {
 	
 <!-- Pinterest display grid START -->
 <div class="container">
+
+
 <section id="feed-section">
-<?php  
+<?php   
 try{
-	$json_feed_string = file_get_contents('https://content.xynie.com/feed/fashion-section.json'); 
+	$json_feed_string = file_get_contents('https://cdn.pinkvilla.com/feed/fashion-section.json'); 
 }
 catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
@@ -91,13 +93,15 @@ foreach($jsonFeedDecoded as $id=>$feed)
 {
 	$sortedFeeds[$id] = array('viewCount'=>$feed['viewCount'],'imageUrl'=>$feed['imageUrl'],'title'=>$feed['title'],'path'=>$feed['path']);	
 }
-//krsort($sortedFeeds);
-array_multisort( array_column($sortedFeeds, "viewCount"), SORT_DESC, $sortedFeeds );
+
+//sort($sortedFeeds);
+//array_multisort( array_column($sortedFeeds, "viewCount"), SORT_DESC, $sortedFeeds );
+array_multisort($sortedFeeds,SORT_DESC);
 
 unset($jsonFeedDecoded,$json_feed_string);
 
 echo "<div style='display:block'><script> var jsonstring = ".json_encode($sortedFeeds)." </script></div>";
-
+ 
 foreach($sortedFeeds as $feed)
 {
 	if($i<20){// PWA load first 20 objects
@@ -122,6 +126,12 @@ function displayFeedPost($feed)
 
 </section>
 </div>
+
+
+<div align='center' id='loading'>
+	<p style='color:pink'>Loading ...<p/><img src='img/Spinner-1s-200px.gif' align='center'>
+</div>
+
 <!-- Pinterest display grid END -->
 
 
@@ -152,7 +162,7 @@ function displayFeedPost($feed)
 	} 
 	}
 	
- 	setTimeout(function(){loadFeed('off')},3000);// PWA page load
+ 	setTimeout(function(){loadFeed('off');$('#loading').hide();},3000);// PWA page load
 	
 	// Fetch & display  Feeds 		
 function loadFeed(pwaMode){
